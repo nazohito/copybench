@@ -7,14 +7,14 @@ PREPARE='rm $DST; sync; sync; sync; sudo sh -c "echo 3 > /proc/sys/vm/drop_cache
 REPEAT=1
 
 eval $PREPARE
-(repeat $REPEAT $TIMEX ./rw_cp ${SRC} ${DST})
+(for i in `seq 0 $REPEAT`; do $TIMEX ./rw_cp ${SRC} ${DST}; done;)
 eval $PREPARE
-(repeat $REPEAT $TIMEX ./rw_fadv_cp ${SRC} ${DST})
+(for i in `seq 0 $REPEAT`; do $TIMEX ./rw_fadv_cp ${SRC} ${DST}; done;)
 eval $PREPARE
-(repeat $REPEAT $TIMEX ./mm_sync_cp ${SRC} ${DST})
+(for i in `seq 0 $REPEAT`; do $TIMEX ./mm_sync_cp ${SRC} ${DST}; done;)
 eval $PREPARE
-(repeat $REPEAT $TIMEX ./mm_sync_madv_cp ${SRC} ${DST})
+(for i in `seq 0 $REPEAT`; do $TIMEX ./mm_sync_madv_cp ${SRC} ${DST}; done;)
 eval $PREPARE
-(repeat $REPEAT $TIMEX ./mw_cp ${SRC} ${DST})
+(for i in `seq 0 $REPEAT`; do $TIMEX ./mw_cp ${SRC} ${DST}; done;)
 eval $PREPARE
-(repeat $REPEAT $TIMEX ./mw_madv_cp ${SRC} ${DST})
+(for i in `seq 0 $REPEAT`; do $TIMEX ./mw_madv_cp ${SRC} ${DST}; done;)
