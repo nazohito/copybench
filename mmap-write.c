@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
   /* copy */
   char *p = from_mmap;
-  const char * const endp = from_mmap + size;
+  const char * const endp = (char*)from_mmap + size;
   while (p < endp) {
     ssize_t num_bytes = write(to, p, endp - p);
     assert(num_bytes > 0);
