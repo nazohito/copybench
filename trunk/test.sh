@@ -1,4 +1,4 @@
-#!/bin/zsh -x
+#!/bin/bash -x
 
 SRC=/data/5Gfile
 DST=/data2/5Gfile
