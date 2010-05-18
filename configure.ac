@@ -3,7 +3,7 @@
 
 AC_PREREQ(2.60)
 AC_INIT(copybench)
-AM_INIT_AUTOMAKE(copybench,0.1)
+AM_INIT_AUTOMAKE(copybench,1.0)
 AC_CONFIG_SRCDIR([.])
 AC_CONFIG_HEADER([config.h])
 
@@ -22,7 +22,7 @@ AC_PROG_LIBTOOL
 
 # Default Compiler Option
 if test x$CC = xgcc; then
-  CFLAGS="$CFLAGS -Wall -Wformat=2 -pipe -Wno-sign-compare -D_FORTIFY_SOURCE=1 -Wcast-qual -Wcast-align -Wpointer-arith -Wwrite-strings -g -fno-omit-frame-pointer -Wswitch-enum"
+  CFLAGS="$CFLAGS -O2 -Wall -Wformat=2 -pipe -Wno-sign-compare -D_FORTIFY_SOURCE=1 -Wcast-qual -Wcast-align -Wpointer-arith -Wwrite-strings -g -fno-omit-frame-pointer -Wswitch-enum"
 fi
 
 AC_CONFIG_FILES([Makefile])
